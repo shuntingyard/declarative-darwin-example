@@ -57,6 +57,7 @@
               "kdenlive"
               "libreoffice" # Manually checked, this is for Apple silicon.
               "logitech-options"
+              "firefox"
             ];
           };
 
