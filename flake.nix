@@ -38,7 +38,7 @@
               neovim
               bat
               htop
-              git
+              # git
             ];
 
           # Necessary for using flakes on this system.
@@ -75,7 +75,7 @@
             # `home-manager` config
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            # home-manager.users.tobias = import ./home/tobias.nix;
+            home-manager.users.tobias = import ./home/tobias.nix;
             home-manager.users.trons = import ./home/trons.nix;
           }
         ];

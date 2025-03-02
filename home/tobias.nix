@@ -7,10 +7,10 @@
 
   home.packages = with pkgs;
     [
-      git
       ripgrep
     ];
 
+  # This is Ok according to home-managers's manual, but fails to work here so far.
   programs.git = {
     enable = true;
     userName = "shuntingyard";
