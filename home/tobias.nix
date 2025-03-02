@@ -8,6 +8,9 @@
   home.packages = with pkgs;
     [
       ripgrep
+      mdcat
+
+      # productivity
     ];
 
   # This is Ok according to home-managers's manual, but fails to work here so far.

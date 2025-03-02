@@ -20,8 +20,11 @@
         { pkgs
         , ...
         }: {
-          # List packages installed in system profile. To search by name, run:
-          # $ nix-env -qaP | grep wget
+          # Necessary for using flakes on this system.
+          nix.settings.experimental-features = "nix-command flakes";
+
+          # Necessary to manage nix with Determinate
+          nix.enable = false;
 
           # If we don't declare users at this level, we run into trouble (type of home.homeDirectory) inside home-manager.
           users.users.tobias = {
@@ -33,19 +36,28 @@
             home = "/Users/trons";
           };
 
+          # Our system packages
           environment.systemPackages = with pkgs;
             [
               neovim
               bat
               htop
-              # git
             ];
 
-          # Necessary for using flakes on this system.
-          nix.settings.experimental-features = "nix-command flakes";
+          # Packages via Homebrew
+          homebrew = {
+            enable = true;
+            # onActivation.cleanup = "uninstall";
 
-          # Necessary to manage nix with Determinate
-          nix.enable = false;
+            taps = [ ];
+            brews = [
+              "cowsay"
+            ];
+            casks = [
+              "libreoffice" # Manually checked, this is for Apple silicon.
+              "logitech-options"
+            ];
+          };
 
           # Enable alternative shell support in nix-darwin.
           # programs.fish.enable = true;
