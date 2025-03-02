@@ -50,6 +50,9 @@
           # Enable alternative shell support in nix-darwin.
           # programs.fish.enable = true;
 
+          # My system default overrides
+          system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false; # 'natural' scrolling Off!
+
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
 
