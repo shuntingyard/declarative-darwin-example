@@ -17,7 +17,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ### Homebrew
 
-Homebrew is managed by ``nix-darwin`, but like the latter, it requires a manual installation step.
+Homebrew is managed by `nix-darwin`, but like the latter, it requires a manual installation step.
 
 ## Installation
 
