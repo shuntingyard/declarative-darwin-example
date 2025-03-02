@@ -17,6 +17,9 @@
     userEmail = "shuntingyard@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
+      # Next 2 lines generate correct entries for signing, but are switched off for now.
+      # commit.gpgsign = true;
+      # user.signingkey = "A68234966D2DAE48BDC2EA8D02989E9A57EF79D5";
     };
   };
 }
