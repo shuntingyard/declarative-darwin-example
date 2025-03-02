@@ -54,6 +54,7 @@
               "cowsay"
             ];
             casks = [
+              "kdenlive"
               "libreoffice" # Manually checked, this is for Apple silicon.
               "logitech-options"
             ];
@@ -78,8 +79,6 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#svalbard
-      #		or
       # $ nix run nix-darwin -- switch --flake .
       darwinConfigurations."svalbard" = nix-darwin.lib.darwinSystem {
         modules = [

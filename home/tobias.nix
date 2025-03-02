@@ -7,10 +7,12 @@
 
   home.packages = with pkgs;
     [
+      # cmdl
+      fastfetch
       ripgrep
-      mdcat
 
       # productivity
+      mdcat
     ];
 
   # This is Ok according to home-managers's manual, but fails to work here so far.
