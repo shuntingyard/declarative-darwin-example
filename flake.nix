@@ -20,13 +20,15 @@
         { pkgs
         , ...
         }: {
+          nixpkgs.config.allowUnfree = true;
+
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
 
           # Necessary to manage nix with Determinate
           nix.enable = false;
 
-          # If we don't declare users at this level, we run into trouble (type of home.homeDirectory) inside home-manager.
+          # If we don't declare users at this level, we run into trouble (wrong type of home.homeDirectory) inside home-manager.
           users.users.tobias = {
             name = "tobias";
             home = "/Users/tobias";
@@ -58,6 +60,8 @@
               "libreoffice" # Manually checked, this is for Apple silicon.
               "logitech-options"
               "firefox"
+              "gimp"
+              "naps2" # as it is broken in nix unstable
             ];
           };
 

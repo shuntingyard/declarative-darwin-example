@@ -1,12 +1,14 @@
 # Declarative Darwin Example
 
-First steps towards configuring MacOS with as few manual (aka imperative) steps as possible.
+First steps towards configuring MacOS with as few manual (aka imperative) steps
+as possible.
 
 ## Prerequisites
 
-### nix-darwin
+### Nix
 
-I consider it good practice to use Determinate System's installer, and let the former manage the Nix environment.
+So far I consider it good practice to use Determinate System's installer,
+and let it manage the Nix environment.
 
 Command to run:
 
@@ -17,13 +19,17 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ### Homebrew
 
-Homebrew is managed by `nix-darwin`, but like the latter, it requires a manual installation step.
+Homebrew is managed by `nix-darwin`, but still requires manual installation
+as a first step.
+
+## Being Declarative
+
+Here this means using a flake to leverage the power of `nix-darwin` and
+`home-manager`.
 
 ## Installation
 
-Initially you need to clone this repository.
-
-Then simply run:
+Clone this repository and run:
 
 ```
 nix run nix-darwin -- switch --flake .

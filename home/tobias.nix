@@ -13,6 +13,9 @@
 
       # productivity
       mdcat
+      warp-terminal
+
+      # office
     ];
 
   # This is Ok according to home-managers's manual, but fails to work here so far.
